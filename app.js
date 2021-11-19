@@ -40,12 +40,23 @@ function randoTelephoneNumber() {
   return `+48 ${number.toLocaleString()}`;
 }
 
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+function randoEmail(name, lastname) {
+  const reverseName = reverseString(name);
+  const email = `${name}.${lastname}@${reverseName}.com`;
+  return email.toLowerCase();
+}
+
 for (let step = 0; step < 20; step++) {
   const gender = randoGender();
   const name = namesByGender(gender);
   const lastname = randoLastname();
   const age = randoAge();
   const telephon = randoTelephoneNumber();
+  const email = randoEmail(name, lastname);
 
   const person = {
     gender: gender,
@@ -53,6 +64,7 @@ for (let step = 0; step < 20; step++) {
     lastname: lastname,
     age: age,
     telephon: telephon,
+    email: email,
   };
 
   people.push(person);
