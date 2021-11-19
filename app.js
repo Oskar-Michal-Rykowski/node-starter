@@ -1,6 +1,5 @@
 const os = require('os');
 const fs = require('fs');
-const { timeStamp } = require('console');
 
 const people = [];
 const gender = ['M', 'F'];
