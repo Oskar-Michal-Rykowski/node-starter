@@ -42,7 +42,7 @@ times.map(() => {
 
 console.log(people);
 
-var exportData = JSON.stringify(people);
+const exportData = JSON.stringify(people);
 
 fs.writeFile('people.json', exportData, (err) => {
   if (err) throw err;
