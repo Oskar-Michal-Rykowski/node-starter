@@ -32,17 +32,27 @@ function randoAge() {
   return Math.floor(Math.random() * (age[1] - age[0] + 1)) + age[0];
 }
 
+function randoTelephoneNumber() {
+  const extremeNumbers = [000000001, 999999999];
+  const number =
+    Math.floor(Math.random() * (extremeNumbers[1] - extremeNumbers[0] + 1)) +
+    extremeNumbers[0];
+  return `+48 ${number.toLocaleString()}`;
+}
+
 for (let step = 0; step < 20; step++) {
   const gender = randoGender();
   const name = namesByGender(gender);
   const lastname = randoLastname();
   const age = randoAge();
+  const telephon = randoTelephoneNumber();
 
   const person = {
     gender: gender,
     firstname: name,
     lastname: lastname,
     age: age,
+    telephon: telephon,
   };
 
   people.push(person);
